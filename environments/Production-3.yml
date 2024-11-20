@@ -1,0 +1,8 @@
+fileVersion: 1
+id: "3"
+mappingDefinitions:
+  SOURCE:
+    database: ""
+    schema: ""
+name: Production
+type: Environment

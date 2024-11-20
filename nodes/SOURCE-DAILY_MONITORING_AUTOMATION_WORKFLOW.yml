@@ -1,0 +1,172 @@
+fileVersion: 1
+id: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+name: DAILY_MONITORING_AUTOMATION_WORKFLOW
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30361f25-0974-41e0-a5bb-c8bb0a53c96a
+          stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef62f97c-77f9-4f6b-9d03-102f087500bf
+          stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: VALIDATION_CHECKS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 858cbc02-bccb-493d-a6fc-d2810034603b
+          stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 605e7684-9816-45b4-9324-67ba38d53cef
+          stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: STATUS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81d8005d-1ac8-495b-b0e5-ede9abe0662b
+          stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: ERR_MSG
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f92ac58-1a43-44c0-b4c3-16e4fece0a5c
+          stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: PRIORITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 362b97b2-f6d8-4f6d-84c7-843c9ba95bad
+          stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: OWNER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c330fbc8-447e-4ba4-8122-d577bad6bc30
+          stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: QUALIFIER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'DAILY_MONITORING_AUTOMATION_WORKFLOW') }}
+  name: DAILY_MONITORING_AUTOMATION_WORKFLOW
+  schema: ""
+  sqlType: Source
+  table: DAILY_MONITORING_AUTOMATION_WORKFLOW
+  type: sourceInput
+  version: 1
+type: Node
