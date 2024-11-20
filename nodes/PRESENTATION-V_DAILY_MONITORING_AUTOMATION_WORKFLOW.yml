@@ -1,0 +1,65 @@
+fileVersion: 1
+id: e558ce27-6351-4a93-869b-5f35507bec70
+name: V_DAILY_MONITORING_AUTOMATION_WORKFLOW
+operation:
+  config:
+    insertStrategy: UNION
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: Aggregated view to generate how many status per dat
+  isMultisource: false
+  locationName: PRESENTATION
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2824d4d9-2c65-429f-a2ff-c7471fce3d5d
+          stepCounter: e558ce27-6351-4a93-869b-5f35507bec70
+        config: {}
+        dataType: DATE
+        description: ""
+        name: DATE_TRANS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 485bd10b-0aef-439f-9912-e3ef69bca4db
+                stepCounter: 7b00225d-c9ee-4fee-a84d-2bfa138c4474
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c354875-5f91-4d72-8b85-4bb86765bc28
+          stepCounter: e558ce27-6351-4a93-869b-5f35507bec70
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: STATUS_COUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4111e8e6-9e9f-4a32-a52e-b379f3544972
+                stepCounter: 7b00225d-c9ee-4fee-a84d-2bfa138c4474
+            transform: COUNT("PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW"."STATUS")
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW: 7b00225d-c9ee-4fee-a84d-2bfa138c4474
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW
+        join:
+          joinCondition: FROM {{ ref('STAGE', 'PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW') }} "PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW" GROUP BY 1
+        name: V_DAILY_MONITORING_AUTOMATION_WORKFLOW
+        noLinkRefs: []
+  name: V_DAILY_MONITORING_AUTOMATION_WORKFLOW
+  overrideSQL: false
+  schema: ""
+  sqlType: View
+  type: sql
+  version: 1
+type: Node
