@@ -1,0 +1,66 @@
+fileVersion: 1
+id: 5b67bf65-2fca-414a-b6b1-647fc7c98055
+name: FCT_DAILY_MONITORING_AUTOMATION_WORKFLOW
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: CORE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 99eb3a64-fbce-4b54-99e1-028f34fcba47
+          stepCounter: 5b67bf65-2fca-414a-b6b1-647fc7c98055
+        config: {}
+        dataType: DATE
+        description: ""
+        name: DATE_TRANS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e727e5ec-07e0-4f83-9900-5224c3cb979f
+                stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78cf7f9c-5ff9-45b2-bd2d-a07a764d6827
+          stepCounter: 5b67bf65-2fca-414a-b6b1-647fc7c98055
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: ERR_MSG_NOT_NULL_COUNTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7a5b588-425c-4c8d-87dd-5dff6214c647
+                stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+            transform: SUM(CASE WHEN "STG_DAILY_MONITORING_AUTOMATION_WORKFLOW"."ERR_MSG" IS NOT NULL THEN 1 ELSE 0 END)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_DAILY_MONITORING_AUTOMATION_WORKFLOW: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STAGE
+            nodeName: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
+        join:
+          joinCondition: FROM {{ ref('STAGE', 'STG_DAILY_MONITORING_AUTOMATION_WORKFLOW') }} "STG_DAILY_MONITORING_AUTOMATION_WORKFLOW" GROUP BY 1
+        name: FCT_DAILY_MONITORING_AUTOMATION_WORKFLOW
+        noLinkRefs: []
+  name: FCT_DAILY_MONITORING_AUTOMATION_WORKFLOW
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node

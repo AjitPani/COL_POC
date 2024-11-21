@@ -1,0 +1,165 @@
+fileVersion: 1
+id: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+name: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: STAGE
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 401e87c3-54f0-408f-a41c-68652f3f7d2e
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30361f25-0974-41e0-a5bb-c8bb0a53c96a
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e727e5ec-07e0-4f83-9900-5224c3cb979f
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: DATE
+        description: ""
+        name: DATE_TRANS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30361f25-0974-41e0-a5bb-c8bb0a53c96a
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: "\"DAILY_MONITORING_AUTOMATION_WORKFLOW\".\"DATE\"::DATE"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3447f68a-afa5-4403-a5b6-de9e88b798fa
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: VALIDATION_CHECKS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef62f97c-77f9-4f6b-9d03-102f087500bf
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 87fedb54-7136-4ba5-b711-49e7d9cb1c7a
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: DESCRIPTION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 858cbc02-bccb-493d-a6fc-d2810034603b
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd8ac96a-7fae-41d8-b80f-3d70022701d6
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 605e7684-9816-45b4-9324-67ba38d53cef
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: CASE WHEN status='Success' THEN TRUE ELSE FALSE END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7a5b588-425c-4c8d-87dd-5dff6214c647
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: ERR_MSG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81d8005d-1ac8-495b-b0e5-ede9abe0662b
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3ea0cc0c-ef3e-4f6d-b3a1-b838891fca83
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: PRIORITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f92ac58-1a43-44c0-b4c3-16e4fece0a5c
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 517be35b-6d65-49bf-a689-b355e7eb8be4
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: OWNER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 362b97b2-f6d8-4f6d-84c7-843c9ba95bad
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85059280-3058-4af3-9a4d-a3058082b56f
+          stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: QUALIFIER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c330fbc8-447e-4ba4-8122-d577bad6bc30
+                stepCounter: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: DAILY_MONITORING_AUTOMATION_WORKFLOW
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'DAILY_MONITORING_AUTOMATION_WORKFLOW') }} "DAILY_MONITORING_AUTOMATION_WORKFLOW"
+        name: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
+        noLinkRefs: []
+  name: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
