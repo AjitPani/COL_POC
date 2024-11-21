@@ -1,0 +1,14 @@
+fileVersion: 1
+id: "3"
+mappingDefinitions:
+  CORE:
+    database: COALESCE_POC_PROD
+    schema: CORE
+  PRESENTATION:
+    database: COALESCE_POC_PROD
+    schema: PRESENTATION
+  STAGE:
+    database: COALESCE_POC_PROD
+    schema: STAGE
+name: Production
+type: Environment
