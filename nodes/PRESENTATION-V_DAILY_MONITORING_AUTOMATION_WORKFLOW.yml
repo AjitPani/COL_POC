@@ -50,10 +50,10 @@ operation:
         customSQL:
           customSQL: ""
         dependencies:
-          - locationName: STAGE
+          - locationName: CORE
             nodeName: PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW
         join:
-          joinCondition: FROM {{ ref('STAGE', 'PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW') }} "PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW" GROUP BY 1
+          joinCondition: FROM {{ ref('CORE', 'PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW') }} "PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW" GROUP BY 1
         name: V_DAILY_MONITORING_AUTOMATION_WORKFLOW
         noLinkRefs: []
   name: V_DAILY_MONITORING_AUTOMATION_WORKFLOW
