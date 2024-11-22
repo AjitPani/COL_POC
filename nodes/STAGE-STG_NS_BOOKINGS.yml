@@ -4,10 +4,14 @@ name: STG_NS_BOOKINGS
 operation:
   config:
     groupByAll: false
+    incColumn: null
     insertStrategy: INSERT
     orderby: false
+    persistTableLocation: CORE
+    persistTableName: ""
     postSQL: ""
     preSQL: ""
+    refTable: true
     selectDistinct: true
     testsEnabled: true
     truncateBefore: true
