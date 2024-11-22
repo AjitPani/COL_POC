@@ -3,9 +3,15 @@ id: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
 name: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
 operation:
   config:
+    incColumn:
+      columnCounter: 401e87c3-54f0-408f-a41c-68652f3f7d2e
+      stepCounter: dd58b019-37da-4c6d-b76e-7b93cd29d1b4
     insertStrategy: INSERT
+    persistTableLocation: CORE
+    persistTableName: PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW
     postSQL: ""
     preSQL: ""
+    refTable: true
     testsEnabled: true
     truncateBefore: true
   database: ""
@@ -154,15 +160,19 @@ operation:
           - locationName: SOURCE
             nodeName: DAILY_MONITORING_AUTOMATION_WORKFLOW
         join:
-          joinCondition: |-
+          joinCondition: |
             FROM {{ ref('SOURCE', 'DAILY_MONITORING_AUTOMATION_WORKFLOW') }} "DAILY_MONITORING_AUTOMATION_WORKFLOW"
-            WHERE "DATE" > current_date - {{ parameters.lookback_days }}
+              WHERE "DAILY_MONITORING_AUTOMATION_WORKFLOW"."DATE" > 
+              (SELECT COALESCE(MAX("DATE"), '1900-01-01') 
+                        FROM {{ ref_no_link('CORE', 'PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW') }} )
         name: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
-        noLinkRefs: []
+        noLinkRefs:
+          - locationName: CORE
+            nodeName: PSTG_DAILY_MONITORING_AUTOMATION_WORKFLOW
   name: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
   overrideSQL: false
   schema: ""
-  sqlType: Stage
+  sqlType: Incremental-package:::230
   type: sql
   version: 1
 type: Node
