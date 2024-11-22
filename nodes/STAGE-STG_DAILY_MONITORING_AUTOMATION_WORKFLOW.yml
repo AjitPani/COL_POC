@@ -146,14 +146,17 @@ operation:
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
-      - aliases: {}
+      - aliases:
+          DAILY_MONITORING_AUTOMATION_WORKFLOW: 83dd5cf5-ee80-4b9f-a300-b4e779f12d3b
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SOURCE
             nodeName: DAILY_MONITORING_AUTOMATION_WORKFLOW
         join:
-          joinCondition: FROM {{ ref('SOURCE', 'DAILY_MONITORING_AUTOMATION_WORKFLOW') }} "DAILY_MONITORING_AUTOMATION_WORKFLOW"
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'DAILY_MONITORING_AUTOMATION_WORKFLOW') }} "DAILY_MONITORING_AUTOMATION_WORKFLOW"
+            WHERE "DATE" > current_date - {{ parameters.lookback_days }}
         name: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
         noLinkRefs: []
   name: STG_DAILY_MONITORING_AUTOMATION_WORKFLOW
