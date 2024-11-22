@@ -1,0 +1,8 @@
+fileVersion: 1
+id: "1"
+name: store_proc
+steps:
+  - 04f15f80-466c-4973-887c-e029bd06d40e
+  - 8b523c90-5a40-48c6-b79c-569e664b8ef9
+  - cc1f3569-4db8-4ddd-8c69-86dc35ee21f0
+type: Subgraph
