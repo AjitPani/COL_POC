@@ -7,6 +7,9 @@ mappingDefinitions:
   PRESENTATION:
     database: COALESCE_POC_PROD
     schema: PRESENTATION
+  SOURCE:
+    database: COALESCE_POC_PROD
+    schema: SOURCE
   STAGE:
     database: COALESCE_POC_PROD
     schema: STAGE
